@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COFFEE SHOP H-M</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="header__logo">
+                        <h1>☕ COFFEE SHOP H-M</h1>
+                        <p>Лучший кофе в городе</p>
+                    </div>
+                    <div class="header__cart" id="cartButton">
+                        <div class="cart-icon">
+                            <span class="cart-count" id="cartCount">0</span>
+                            🛒
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Hero Section -->
+                <section class="hero" id="heroSection">
+                    <div class="hero__content">
+                        <h1>Кофе, вдохновляющее каждый день</h1>
+                        <p>COFFEE SHOP H-M — это момент уюта и тепла, где бы вы ни были.</p>
+                        <div class="hero__benefits">
+                            <div class="benefit">
+                                <div class="benefit__icon">🖱️</div>
+                                <div class="benefit__text">Заказ в два клика</div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit__icon">🌟</div>
+                                <div class="benefit__text">Сохранение аромата</div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit__icon">🚚</div>
+                                <div class="benefit__text">Быстрая доставка</div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit__icon">☕</div>
+                                <div class="benefit__text">Свежесть в каждой чашке</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Новинки -->
+                <section class="carousel-section" id="newProductsSection">
+                    <h2>Новинки этого месяца</h2>
+                    <div class="carousel">
+                        <div class="carousel__container" id="newProductsCarousel">
+                            <!-- New products will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Популярные -->
+                <section class="carousel-section" id="popularProductsSection">
+                    <h2>Часто заказывают</h2>
+                    <div class="carousel">
+                        <div class="carousel__container" id="popularProductsCarousel">
+                            <!-- Popular products will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Search -->
+                <section class="search-section">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Поиск кофе...">
+                    </div>
+                </section>
+
+                <!-- Categories -->
+                <section class="categories">
+                    <div class="categories__list" id="categoriesList">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Products -->
+                <section class="products">
+                    <div class="products__grid" id="productsGrid">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Find Us Section -->
+                <section class="find-us" id="findUsSection">
+                    <h2>Найти нас</h2>
+                    <div class="find-us__content">
+                        <div class="find-us__info">
+                            <div class="find-us__address">
+                                <h3>📍 Адрес</h3>
+                                <p>Ханты-Мансийск, ТЦ "Гостиный двор", 4 этаж</p>
+                            </div>
+                            <div class="find-us__contact">
+                                <h3>📞 Телефон</h3>
+                                <p>+7 (3467) 12-34-56</p>
+                            </div>
+                            <div class="find-us__hours">
+                                <h3>🕒 Часы работы</h3>
+                                <p>8:00 - 22:00</p>
+                            </div>
+                        </div>
+                        <div class="find-us__maps">
+                            <h3>Построить маршрут</h3>
+                            <div class="maps-buttons">
+                                <a href="https://maps.google.com/?q=Ханты-Мансийск" target="_blank" class="btn btn--map btn--google">
+                                    <span class="map-icon">🗺️</span>
+                                    Открыть в Google Картах
+                                </a>
+                                <a href="https://yandex.ru/maps/11006/khanty-mansiysk/" target="_blank" class="btn btn--map btn--yandex">
+                                    <span class="map-icon">🗺️</span>
+                                    Открыть в Яндекс.Картах
+                                </a>
+                                <a href="https://2gis.ru/kh_mansiysk" target="_blank" class="btn btn--map btn--gis">
+                                    <span class="map-icon">🗺️</span>
+                                    Открыть в 2ГИС
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cart -->
+                <section class="cart-section" id="cartSection" style="display: none;">
+                    <div class="cart">
+                        <h2>Корзина</h2>
+                        <div class="cart__items" id="cartItems">
+                            <!-- Cart items will be populated by JavaScript -->
+                        </div>
+                        <div class="cart__total">
+                            <div class="total-price">
+                                <span>Итого: <span id="totalPrice">0₽</span></span>
+                            </div>
+                            <button class="btn btn--primary btn--full-width" id="checkoutButton">
+                                Оформить заказ
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Checkout -->
+                <section class="checkout-section" id="checkoutSection" style="display: none;">
+                    <div class="checkout">
+                        <h2>Оформление заказа</h2>
+                        <form class="checkout__form" id="checkoutForm">
+                            <div class="form-group">
+                                <label class="form-label" for="customerName">Имя</label>
+                                <input type="text" id="customerName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="customerPhone">Телефон</label>
+                                <input type="tel" id="customerPhone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="customerAddress">Адрес доставки</label>
+                                <textarea id="customerAddress" class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="customerComment">Комментарий к заказу</label>
+                                <textarea id="customerComment" class="form-control" rows="2" placeholder="Необязательно"></textarea>
+                            </div>
+                            <div class="checkout__summary">
+                                <div class="summary-item">
+                                    <span>Товары:</span>
+                                    <span id="summarySubtotal">0₽</span>
+                                </div>
+                                <div class="summary-item summary-total">
+                                    <span>Итого:</span>
+                                    <span id="summaryTotal">0₽</span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">
+                                Отправить заказ
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Navigation -->
+        <nav class="navigation" id="navigation">
+            <button class="nav-item" data-section="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Главная</span>
+            </button>
+            <button class="nav-item" data-section="products">
+                <span class="nav-icon">☕</span>
+                <span class="nav-text">Меню</span>
+            </button>
+            <button class="nav-item" data-section="cart">
+                <span class="nav-icon">🛒</span>
+                <span class="nav-text">Корзина</span>
+            </button>
+            <button class="nav-item" data-section="find-us">
+                <span class="nav-icon">📍</span>
+                <span class="nav-text">Найти нас</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Заказ принят!</h3>
+            <p>Ваш заказ успешно отправлен. Ожидайте доставку в течение 15-30 минут.</p>
+            <button class="btn btn--primary" id="closeModal">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
