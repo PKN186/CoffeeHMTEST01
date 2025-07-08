@@ -1,0 +1,121 @@
+const PRODUCTS = [
+  {
+    id: 1,
+    title: 'Классический эспрессо',
+    description: 'Традиционный кофе, приготовленный из горячей воды и молотых зерен',
+    image: '/src/assets/images/products/expresso-tradicional.png',
+    tags: ['классический'],
+    price: 150,
+  },
+  {
+    id: 2,
+    title: 'Американо',
+    description: 'Разбавленный эспрессо, менее крепкий, чем классический',
+    image: '/src/assets/images/products/expresso-americano.png',
+    tags: ['классический'],
+    price: 150,
+  },
+  {
+    id: 3,
+    title: 'Кремовый эспрессо',
+    description: 'Классический эспрессо с кремовой пеной',
+    image: '/src/assets/images/products/expresso-cremoso.png',
+    tags: ['классический'],
+    price: 150,
+  },
+  {
+    id: 4,
+    title: 'Холодный эспрессо',
+    description: 'Напиток из эспрессо с кубиками льда',
+    image: '/src/assets/images/products/expresso-gelado.png',
+    tags: ['классический', 'холодный'],
+    price: 150,
+  },
+  {
+    id: 5,
+    title: 'Кофе с молоком',
+    description: 'Половина классического эспрессо с парным молоком',
+    image: '/src/assets/images/products/cafe-com-leite.png',
+    tags: ['классический', 'с молоком'],
+    price: 160,
+  },
+  {
+    id: 6,
+    title: 'Латте',
+    description: 'Порция эспрессо с двойным количеством молока и кремовой пеной',
+    image: '/src/assets/images/products/latte.png',
+    tags: ['классический', 'с молоком'],
+    price: 160,
+  },
+  {
+    id: 7,
+    title: 'Капучино',
+    description: 'Напиток с корицей из равных частей кофе, молока и пены',
+    image: '/src/assets/images/products/capuccino.png',
+    tags: ['классический', 'с молоком'],
+    price: 160,
+  },
+  {
+    id: 8,
+    title: 'Маккиато',
+    description: 'Эспрессо с небольшим количеством горячего молока и пены',
+    image: '/src/assets/images/products/macchiato.png',
+    tags: ['классический', 'с молоком'],
+    price: 160,
+  },
+  {
+    id: 9,
+    title: 'Мокачино',
+    description: 'Эспрессо с шоколадным сиропом, небольшим количеством молока и пены',
+    image: '/src/assets/images/products/mocaccino.png',
+    tags: ['классический', 'с молоком'],
+    price: 160,
+  },
+  {
+    id: 10,
+    title: 'Горячий шоколад',
+    description: 'Напиток из растопленного шоколада, горячего молока и кофе',
+    image: '/src/assets/images/products/chocolate-quente.png',
+    tags: ['специальный', 'с молоком'],
+    price: 180,
+  },
+  {
+    id: 11,
+    title: 'Кубинский кофе',
+    description: 'Холодный напиток из эспрессо с ромом, сливками и мятой',
+    image: '/src/assets/images/products/cubano.png',
+    tags: ['специальный', 'алкогольный', 'холодный'],
+    price: 180,
+  },
+  {
+    id: 12,
+    title: 'Гавайский кофе',
+    description: 'Сладкий напиток из кофе и кокосового молока',
+    image: '/src/assets/images/products/havaiano.png',
+    tags: ['специальный'],
+    price: 180,
+  },
+  {
+    id: 13,
+    title: 'Арабский кофе',
+    description: 'Напиток из арабских кофейных зерен и специй',
+    image: '/src/assets/images/products/arabe.png',
+    tags: ['специальный'],
+    price: 180,
+  },
+  {
+    id: 14,
+    title: 'Ирландский кофе',
+    description: 'Напиток на основе кофе, ирландского виски, сахара и сливок',
+    image: '/src/assets/images/products/irlandes.png',
+    tags: ['специальный', 'алкогольный'],
+    price: 180,
+  },
+]
+const TAGS = ['классический', 'специальный', 'с молоком', 'алкогольный', 'холодный']
+
+const productsByTag = (tag) => PRODUCTS.filter((product) => product.tags.includes(tag))
+
+export type ProductProps = (typeof PRODUCTS)[0]
+
+export { PRODUCTS, TAGS, productsByTag }
